@@ -1,0 +1,19 @@
+# Dependencies
+oncf-frontend/node_modules
+oncf-backend/vendor
+
+# Build output
+oncf-frontend/dist
+
+# Environment files
+oncf-frontend/.env
+oncf-frontend/.env.local
+oncf-backend/.env
+
+# Laravel storage
+oncf-backend/storage/logs/*.log
+oncf-backend/public/storage
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,217 @@
+/* ─── Variables ONCF ──────────────────────────────────────── */
+:root {
+  --oncf-dark:    #1B3A5C;
+  --oncf-blue:    #2E6DA4;
+  --oncf-light:   #E8F4FD;
+  --oncf-bg:      #F4F6F8;
+  --oncf-neutral: #546E7A;
+  --oncf-success: #2E7D32;
+  --oncf-danger:  #C62828;
+  --oncf-border:  #D0DCE8;
+  --oncf-text:    #1A2B3C;
+  --oncf-muted:   #607D8B;
+}
+
+/* ─── Reset & base ───────────────────────────────────────── */
+* { box-sizing: border-box; }
+
+body {
+  background-color: var(--oncf-bg);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--oncf-text);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ─── Navbar ─────────────────────────────────────────────── */
+.navbar-oncf {
+  background-color: var(--oncf-dark) !important;
+  border-bottom: 3px solid var(--oncf-blue);
+  padding: 0.6rem 0;
+}
+
+.navbar-oncf .navbar-brand {
+  font-family: Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white !important;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-oncf .nav-link {
+  color: #B8D4E8 !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.navbar-oncf .nav-link:hover {
+  color: white !important;
+}
+
+/* ─── Boutons ────────────────────────────────────────────── */
+.btn-oncf-primary {
+  background-color: var(--oncf-dark);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.55rem 1.4rem;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.3px;
+}
+.btn-oncf-primary:hover {
+  background-color: var(--oncf-blue);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn-oncf-secondary {
+  background-color: var(--oncf-light);
+  border: 1px solid var(--oncf-border);
+  color: var(--oncf-dark);
+  font-weight: 500;
+  padding: 0.55rem 1.4rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.btn-oncf-secondary:hover {
+  background-color: #D0E8F8;
+  color: var(--oncf-dark);
+}
+
+.btn-oncf-success {
+  background-color: var(--oncf-success);
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 0.55rem 1.4rem;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.btn-oncf-success:hover {
+  background-color: #1B5E20;
+  color: white;
+}
+
+/* ─── Cards ──────────────────────────────────────────────── */
+.card-oncf {
+  background: white;
+  border: 1px solid var(--oncf-border);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(27, 58, 92, 0.07);
+}
+
+.card-oncf .card-header-oncf {
+  background: var(--oncf-dark);
+  color: white;
+  border-radius: 11px 11px 0 0;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+/* ─── Tables ─────────────────────────────────────────────── */
+.table-oncf thead th {
+  background-color: var(--oncf-dark);
+  color: white;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.3px;
+  border: none;
+  padding: 0.85rem 1rem;
+}
+
+.table-oncf tbody tr {
+  border-bottom: 1px solid var(--oncf-border);
+  transition: background 0.15s;
+}
+
+.table-oncf tbody tr:hover {
+  background-color: var(--oncf-light);
+}
+
+.table-oncf td {
+  padding: 0.8rem 1rem;
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+
+/* ─── Badges ─────────────────────────────────────────────── */
+.badge-oncf {
+  background-color: var(--oncf-blue);
+  color: white;
+  font-size: 0.78rem;
+  padding: 0.3em 0.7em;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+.badge-prix {
+  background-color: #E8F5E9;
+  color: var(--oncf-success);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.2em 0.6em;
+  border-radius: 6px;
+}
+
+/* ─── Formulaires ────────────────────────────────────────── */
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--oncf-blue);
+  box-shadow: 0 0 0 3px rgba(46, 109, 164, 0.15);
+}
+
+/* ─── Hero search ────────────────────────────────────────── */
+.search-hero {
+  background: linear-gradient(135deg, var(--oncf-dark) 0%, #2C5282 100%);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.search-hero h1 {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.search-hero p {
+  color: #9BBFD8;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* ─── Billet ─────────────────────────────────────────────── */
+.billet-card {
+  border: 1.5px solid var(--oncf-blue) !important;
+  border-radius: 12px;
+}
+
+.billet-header {
+  background: linear-gradient(135deg, var(--oncf-dark), var(--oncf-blue));
+  color: white;
+  border-radius: 10px 10px 0 0;
+  padding: 1rem 1.5rem;
+}
+
+/* ─── Impression ─────────────────────────────────────────── */
+@media print {
+  .no-print { display: none !important; }
+  .billet-card { page-break-after: always; }
+  .navbar-oncf { display: none !important; }
+  body { background: white; }
+}
+
+/* ─── Utilitaires ────────────────────────────────────────── */
+.text-oncf { color: var(--oncf-dark); }
+.text-oncf-muted { color: var(--oncf-muted); }
+.bg-oncf { background-color: var(--oncf-dark); }
+.border-oncf { border-color: var(--oncf-border) !important; }
