@@ -36,23 +36,8 @@ export default function Login() {
 
         {/* Logo + titre */}
         <div className="text-center mb-4">
-          <div style={{
-            width: 72, height: 72, borderRadius: 20,
-            background: 'linear-gradient(135deg, #0A2342, #163A6B)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            margin: '0 auto 14px',
-            boxShadow: '0 8px 24px rgba(10,35,66,0.25)',
-          }}>
-            <svg width="40" height="40" viewBox="0 0 38 38" fill="none">
-              <rect x="7" y="10" width="16" height="11" rx="3" fill="white"/>
-              <rect x="9" y="12" width="4" height="4" rx="1" fill="#0A2342"/>
-              <rect x="15" y="12" width="4" height="4" rx="1" fill="#0A2342"/>
-              <circle cx="11" cy="24" r="2.5" fill="white" stroke="#0A2342" strokeWidth="1"/>
-              <circle cx="19" cy="24" r="2.5" fill="white" stroke="#0A2342" strokeWidth="1"/>
-              <rect x="23" y="18" width="10" height="7" rx="2" fill="white" opacity="0.85"/>
-              <circle cx="27" cy="24" r="2" fill="white" stroke="#0A2342" strokeWidth="1"/>
-            </svg>
-          </div>
+          <img src="/logo.png" alt="ONCF Logo"
+            style={{ width: 80, height: 80, objectFit: 'contain', margin: '0 auto 14px', display: 'block' }} />
           <h2 style={{ fontFamily: 'Georgia, serif', color: '#0A2342', fontWeight: 700, fontSize: '1.7rem', marginBottom: 4 }}>
             ONCF
           </h2>

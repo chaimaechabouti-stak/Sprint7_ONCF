@@ -4,18 +4,8 @@ import { useCart } from '../context/CartContext'
 
 function OncfLogo() {
   return (
-    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
-      <rect width="38" height="38" rx="10" fill="#FF6B35"/>
-      <rect x="7" y="10" width="16" height="11" rx="3" fill="white"/>
-      <rect x="9" y="12" width="4" height="4" rx="1" fill="#0A2342"/>
-      <rect x="15" y="12" width="4" height="4" rx="1" fill="#0A2342"/>
-      <rect x="5" y="13" width="2" height="2" rx="1" fill="white" opacity="0.5"/>
-      <circle cx="11" cy="24" r="2.5" fill="white" stroke="#0A2342" strokeWidth="1"/>
-      <circle cx="19" cy="24" r="2.5" fill="white" stroke="#0A2342" strokeWidth="1"/>
-      <rect x="23" y="18" width="10" height="7" rx="2" fill="white" opacity="0.9"/>
-      <circle cx="27" cy="24" r="2" fill="white" stroke="#0A2342" strokeWidth="1"/>
-      <rect x="7" y="21" width="24" height="1.5" rx="0.75" fill="white" opacity="0.25"/>
-    </svg>
+    <img src="/logo.png" alt="ONCF Logo"
+      style={{ width: 42, height: 42, objectFit: 'contain' }} />
   )
 }
 
