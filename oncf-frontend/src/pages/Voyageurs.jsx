@@ -38,13 +38,13 @@ export default function Voyageurs() {
   }
 
   const inputStyle = { borderRadius: 10, borderColor: '#E0E7EF', fontSize: '0.9rem', padding: '0.6rem 0.85rem' }
-  const labelStyle = { fontWeight: 600, fontSize: '0.85rem', color: '#0A2342', marginBottom: 4 }
+  const labelStyle = { fontWeight: 600, fontSize: '0.85rem', color: '#1A1A2E', marginBottom: 4 }
 
   return (
     <div className="fade-in">
       {/* En-tête */}
       <div className="mb-4">
-        <h2 style={{ fontFamily: 'Georgia, serif', color: '#0A2342', fontWeight: 700, marginBottom: 4 }}>
+        <h2 style={{ fontFamily: 'Georgia, serif', color: '#1A1A2E', fontWeight: 700, marginBottom: 4 }}>
           Informations des voyageurs
         </h2>
         <p style={{ color: '#607D8B', fontSize: '0.9rem', margin: 0 }}>
@@ -59,16 +59,16 @@ export default function Voyageurs() {
           <div key={step} className="d-flex align-items-center gap-2">
             <div style={{
               width: 28, height: 28, borderRadius: '50%',
-              background: i === 2 ? '#FF6B35' : i < 2 ? '#2E7D32' : '#E0E7EF',
+              background: i === 2 ? '#E8192C' : i < 2 ? '#2E7D32' : '#E0E7EF',
               color: i <= 2 ? 'white' : '#999',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: '0.75rem', fontWeight: 700,
-              boxShadow: i === 2 ? '0 2px 8px rgba(255,107,53,0.4)' : 'none',
+              boxShadow: i === 2 ? '0 2px 8px rgba(232,25,44,0.4)' : 'none',
             }}>
               {i < 2 ? '✓' : i + 1}
             </div>
             <span style={{
-              color: i === 2 ? '#FF6B35' : i < 2 ? '#2E7D32' : '#999',
+              color: i === 2 ? '#E8192C' : i < 2 ? '#2E7D32' : '#999',
               fontWeight: i === 2 ? 700 : 400,
             }}>
               {step}
@@ -85,8 +85,8 @@ export default function Voyageurs() {
               <div key={idx} className="card-oncf mb-3">
                 <div style={{
                   padding: '0.75rem 1.25rem',
-                  background: 'linear-gradient(135deg, #0A2342, #163A6B)',
-                  borderBottom: '3px solid #FF6B35',
+                  background: 'linear-gradient(135deg, #1A1A2E, #2D2D2D)',
+                  borderBottom: '3px solid #E8192C',
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 }}>
                   <span style={{ fontWeight: 700, color: 'white', fontSize: '0.9rem' }}>
@@ -119,7 +119,7 @@ export default function Voyageurs() {
           {/* Résumé latéral */}
           <div className="col-lg-4">
             <div className="card-oncf p-4" style={{ position: 'sticky', top: 20 }}>
-              <h6 style={{ color: '#FF6B35', textTransform: 'uppercase',
+              <h6 style={{ color: '#E8192C', textTransform: 'uppercase',
                 fontSize: '0.75rem', letterSpacing: '1px', fontWeight: 700, marginBottom: 16 }}>
                 Résumé commande
               </h6>
@@ -127,29 +127,29 @@ export default function Voyageurs() {
                 <div key={voyage.id} className="d-flex justify-content-between mb-2"
                   style={{ fontSize: '0.875rem' }}>
                   <span style={{ color: '#546E7A' }}>{voyage.code_voyage} ×{qte}</span>
-                  <span style={{ color: '#0A2342', fontWeight: 600 }}>{(voyage.prixVoyage * qte).toFixed(2)} DH</span>
+                  <span style={{ color: '#1A1A2E', fontWeight: 600 }}>{(voyage.prixVoyage * qte).toFixed(2)} DH</span>
                 </div>
               ))}
-              <div style={{ borderTop: '2px solid #FF6B35', marginTop: 12, paddingTop: 12 }}
+              <div style={{ borderTop: '2px solid #E8192C', marginTop: 12, paddingTop: 12 }}
                 className="d-flex justify-content-between align-items-center">
-                <span style={{ fontWeight: 700, color: '#0A2342' }}>Total</span>
-                <span style={{ fontWeight: 800, color: '#FF6B35', fontSize: '1.3rem' }}>
+                <span style={{ fontWeight: 700, color: '#1A1A2E' }}>Total</span>
+                <span style={{ fontWeight: 800, color: '#E8192C', fontSize: '1.3rem' }}>
                   {total.toFixed(2)} DH
                 </span>
               </div>
 
               <button type="submit" className="w-100 btn mt-4"
                 style={{
-                  background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
+                  background: 'linear-gradient(135deg, #E8192C, #C0142A)',
                   color: 'white', borderRadius: 10, border: 'none',
                   padding: '0.7rem', fontWeight: 700,
-                  boxShadow: '0 4px 14px rgba(255,107,53,0.35)',
+                  boxShadow: '0 4px 14px rgba(232,25,44,0.35)',
                 }}>
                 💳 Passer au paiement
               </button>
               <button type="button" className="w-100 btn mt-2"
                 onClick={() => navigate('/panier')}
-                style={{ background: 'white', color: '#0A2342', borderRadius: 10,
+                style={{ background: 'white', color: '#1A1A2E', borderRadius: 10,
                   border: '1.5px solid #E0E7EF', padding: '0.6rem', fontSize: '0.875rem', fontWeight: 500 }}>
                 ← Retour panier
               </button>

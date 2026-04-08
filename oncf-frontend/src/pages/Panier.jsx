@@ -14,7 +14,7 @@ export default function Panier() {
         margin: '0 auto 20px', fontSize: 42,
         border: '2px solid #FFD5C2',
       }}>🛒</div>
-      <h4 style={{ color: '#0A2342', fontFamily: 'Georgia, serif', marginBottom: 8 }}>
+      <h4 style={{ color: '#1A1A2E', fontFamily: 'Georgia, serif', marginBottom: 8 }}>
         Votre panier est vide
       </h4>
       <p style={{ color: '#607D8B', fontSize: '0.9rem', marginBottom: 24 }}>
@@ -22,10 +22,10 @@ export default function Panier() {
       </p>
       <Link to="/" className="btn"
         style={{
-          background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
+          background: 'linear-gradient(135deg, #E8192C, #C0142A)',
           color: 'white', borderRadius: 10,
           border: 'none', padding: '0.65rem 1.8rem', fontWeight: 700,
-          boxShadow: '0 4px 14px rgba(255,107,53,0.35)',
+          boxShadow: '0 4px 14px rgba(232,25,44,0.35)',
         }}>
         🔍 Rechercher un voyage
       </Link>
@@ -37,7 +37,7 @@ export default function Panier() {
       {/* En-tête */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h2 style={{ fontFamily: 'Georgia, serif', color: '#0A2342', fontWeight: 700, marginBottom: 2 }}>
+          <h2 style={{ fontFamily: 'Georgia, serif', color: '#1A1A2E', fontWeight: 700, marginBottom: 2 }}>
             Mon panier
           </h2>
           <span style={{ color: '#607D8B', fontSize: '0.875rem' }}>
@@ -66,7 +66,7 @@ export default function Panier() {
                   <div style={{ flex: 1 }}>
                     <div className="d-flex align-items-center gap-2 mb-1">
                       <span className="badge-oncf">{voyage.code_voyage}</span>
-                      <span style={{ fontWeight: 700, color: '#0A2342' }}>
+                      <span style={{ fontWeight: 700, color: '#1A1A2E' }}>
                         {voyage.villeDepart} → {voyage.villeDarrivee}
                       </span>
                     </div>
@@ -96,14 +96,14 @@ export default function Panier() {
                       style={{ border: '1.5px solid #E0E7EF', borderRadius: 10, overflow: 'hidden' }}>
                       <button onClick={() => updateQte(voyage.id, qte - 1)}
                         style={{ background: '#F5F7FA', border: 'none', padding: '0.3rem 0.85rem',
-                          cursor: 'pointer', color: '#FF6B35', fontWeight: 700, fontSize: '1rem' }}>−</button>
-                      <span style={{ padding: '0.3rem 1rem', fontWeight: 700, color: '#0A2342',
+                          cursor: 'pointer', color: '#E8192C', fontWeight: 700, fontSize: '1rem' }}>−</button>
+                      <span style={{ padding: '0.3rem 1rem', fontWeight: 700, color: '#1A1A2E',
                         minWidth: 40, textAlign: 'center' }}>{qte}</span>
                       <button onClick={() => updateQte(voyage.id, qte + 1)}
                         style={{ background: '#F5F7FA', border: 'none', padding: '0.3rem 0.85rem',
-                          cursor: 'pointer', color: '#FF6B35', fontWeight: 700, fontSize: '1rem' }}>+</button>
+                          cursor: 'pointer', color: '#E8192C', fontWeight: 700, fontSize: '1rem' }}>+</button>
                     </div>
-                    <span style={{ fontWeight: 800, color: '#0A2342', fontSize: '1rem', minWidth: 90, textAlign: 'right' }}>
+                    <span style={{ fontWeight: 800, color: '#1A1A2E', fontSize: '1rem', minWidth: 90, textAlign: 'right' }}>
                       {(voyage.prixVoyage * qte).toFixed(2)} DH
                     </span>
                   </div>
@@ -116,7 +116,7 @@ export default function Panier() {
         {/* Récapitulatif */}
         <div className="col-lg-4">
           <div className="card-oncf p-4" style={{ position: 'sticky', top: 20 }}>
-            <h6 style={{ color: '#FF6B35', textTransform: 'uppercase',
+            <h6 style={{ color: '#E8192C', textTransform: 'uppercase',
               fontSize: '0.75rem', letterSpacing: '1px', fontWeight: 700, marginBottom: 16 }}>
               Récapitulatif
             </h6>
@@ -125,16 +125,16 @@ export default function Panier() {
               <div key={voyage.id} className="d-flex justify-content-between mb-2"
                 style={{ fontSize: '0.875rem' }}>
                 <span style={{ color: '#546E7A' }}>{voyage.code_voyage} ×{qte}</span>
-                <span style={{ color: '#0A2342', fontWeight: 600 }}>
+                <span style={{ color: '#1A1A2E', fontWeight: 600 }}>
                   {(voyage.prixVoyage * qte).toFixed(2)} DH
                 </span>
               </div>
             ))}
 
-            <div style={{ borderTop: '2px solid #FF6B35', marginTop: 12, paddingTop: 12 }}
+            <div style={{ borderTop: '2px solid #E8192C', marginTop: 12, paddingTop: 12 }}
               className="d-flex justify-content-between align-items-center">
-              <span style={{ fontWeight: 700, color: '#0A2342' }}>Total</span>
-              <span style={{ fontWeight: 800, color: '#FF6B35', fontSize: '1.4rem' }}>
+              <span style={{ fontWeight: 700, color: '#1A1A2E' }}>Total</span>
+              <span style={{ fontWeight: 800, color: '#E8192C', fontSize: '1.4rem' }}>
                 {total.toFixed(2)} DH
               </span>
             </div>
@@ -142,16 +142,16 @@ export default function Panier() {
             <button onClick={() => navigate('/voyageurs')}
               className="w-100 btn mt-4"
               style={{
-                background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
+                background: 'linear-gradient(135deg, #E8192C, #C0142A)',
                 color: 'white', borderRadius: 10, border: 'none',
                 padding: '0.7rem', fontWeight: 700,
-                boxShadow: '0 4px 14px rgba(255,107,53,0.35)',
+                boxShadow: '0 4px 14px rgba(232,25,44,0.35)',
               }}>
               Infos voyageurs →
             </button>
             <button onClick={() => navigate('/')}
               className="w-100 btn mt-2"
-              style={{ background: 'white', color: '#0A2342', borderRadius: 10,
+              style={{ background: 'white', color: '#1A1A2E', borderRadius: 10,
                 border: '1.5px solid #E0E7EF', padding: '0.6rem', fontSize: '0.875rem', fontWeight: 500 }}>
               ← Continuer les achats
             </button>

@@ -52,7 +52,7 @@ function CheckoutForm({ clientSecret, total, onSuccess }) {
         </div>
 
         <div className="mb-3">
-          <label className="form-label" style={{ fontWeight: 600, fontSize: '0.85rem', color: '#0A2342' }}>
+          <label className="form-label" style={{ fontWeight: 600, fontSize: '0.85rem', color: '#1A1A2E' }}>
             Numéro de carte
           </label>
           <div className="form-control py-2" style={{ borderRadius: 10, borderColor: '#E0E7EF' }}>
@@ -62,7 +62,7 @@ function CheckoutForm({ clientSecret, total, onSuccess }) {
 
         <div className="row g-3">
           <div className="col-md-6">
-            <label className="form-label" style={{ fontWeight: 600, fontSize: '0.85rem', color: '#0A2342' }}>
+            <label className="form-label" style={{ fontWeight: 600, fontSize: '0.85rem', color: '#1A1A2E' }}>
               Date d'expiration
             </label>
             <div className="form-control py-2" style={{ borderRadius: 10, borderColor: '#E0E7EF' }}>
@@ -70,7 +70,7 @@ function CheckoutForm({ clientSecret, total, onSuccess }) {
             </div>
           </div>
           <div className="col-md-6">
-            <label className="form-label" style={{ fontWeight: 600, fontSize: '0.85rem', color: '#0A2342' }}>
+            <label className="form-label" style={{ fontWeight: 600, fontSize: '0.85rem', color: '#1A1A2E' }}>
               CVV
             </label>
             <div className="form-control py-2" style={{ borderRadius: 10, borderColor: '#E0E7EF' }}>
@@ -88,18 +88,18 @@ function CheckoutForm({ clientSecret, total, onSuccess }) {
       )}
 
       <div className="mb-3 px-3 py-2 rounded-3"
-        style={{ background: '#FFF4EF', border: '1px solid #FFD5C2', fontSize: '0.825rem', color: '#FF6B35' }}>
+        style={{ background: '#FFF4EF', border: '1px solid #FFD5C2', fontSize: '0.825rem', color: '#E8192C' }}>
         🧪 <strong>Test :</strong> Carte <code>4242 4242 4242 4242</code>, date <code>12/28</code>, CVV <code>123</code>
       </div>
 
       <button type="submit" className="btn w-100"
         disabled={!stripe || loading}
         style={{
-          background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
+          background: 'linear-gradient(135deg, #E8192C, #C0142A)',
           color: 'white', border: 'none',
           borderRadius: 10, padding: '0.75rem',
           fontWeight: 700, fontSize: '1rem',
-          boxShadow: '0 4px 16px rgba(255,107,53,0.4)',
+          boxShadow: '0 4px 16px rgba(232,25,44,0.4)',
         }}>
         {loading
           ? <><span className="spinner-border spinner-border-sm me-2" />Traitement…</>
@@ -147,7 +147,7 @@ export default function Paiement() {
   if (creatingIntent || !clientSecret) return (
     <div className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
       <div className="text-center">
-        <div className="spinner-border mb-3" style={{ color: '#FF6B35', width: '3rem', height: '3rem' }} />
+        <div className="spinner-border mb-3" style={{ color: '#E8192C', width: '3rem', height: '3rem' }} />
         <p style={{ color: '#607D8B' }}>Initialisation du paiement…</p>
       </div>
     </div>
@@ -157,7 +157,7 @@ export default function Paiement() {
     <div className="row justify-content-center fade-in">
       <div className="col-md-7">
         <div className="mb-4">
-          <h2 style={{ fontFamily: 'Georgia, serif', color: '#0A2342', fontWeight: 700, marginBottom: 4 }}>
+          <h2 style={{ fontFamily: 'Georgia, serif', color: '#1A1A2E', fontWeight: 700, marginBottom: 4 }}>
             💳 Paiement
           </h2>
           <p style={{ color: '#607D8B', margin: 0 }}>Finaliser votre réservation</p>
@@ -166,7 +166,7 @@ export default function Paiement() {
         {/* Récapitulatif */}
         <div className="card-oncf mb-4">
           <div style={{ padding: '0.85rem 1.25rem', background: '#FAFBFC',
-            borderBottom: '1px solid #E0E7EF', fontWeight: 700, color: '#0A2342', fontSize: '0.9rem' }}>
+            borderBottom: '1px solid #E0E7EF', fontWeight: 700, color: '#1A1A2E', fontSize: '0.9rem' }}>
             📋 Récapitulatif
           </div>
           <div className="p-0">
@@ -179,16 +179,16 @@ export default function Paiement() {
                       {voyage.villeDepart} → {voyage.villeDarrivee}
                     </td>
                     <td className="text-center py-3" style={{ color: '#607D8B' }}>×{qte}</td>
-                    <td className="text-end pe-3 py-3" style={{ fontWeight: 700, color: '#0A2342' }}>
+                    <td className="text-end pe-3 py-3" style={{ fontWeight: 700, color: '#1A1A2E' }}>
                       {(voyage.prixVoyage * qte).toFixed(2)} DH
                     </td>
                   </tr>
                 ))}
               </tbody>
               <tfoot>
-                <tr style={{ background: '#FFF4EF', borderTop: '2px solid #FF6B35' }}>
-                  <td colSpan="2" className="ps-3 py-3" style={{ fontWeight: 700, color: '#0A2342' }}>Total</td>
-                  <td className="text-end pe-3 py-3" style={{ fontWeight: 800, color: '#FF6B35', fontSize: '1.2rem' }}>
+                <tr style={{ background: '#FFF4EF', borderTop: '2px solid #E8192C' }}>
+                  <td colSpan="2" className="ps-3 py-3" style={{ fontWeight: 700, color: '#1A1A2E' }}>Total</td>
+                  <td className="text-end pe-3 py-3" style={{ fontWeight: 800, color: '#E8192C', fontSize: '1.2rem' }}>
                     {total.toFixed(2)} DH
                   </td>
                 </tr>

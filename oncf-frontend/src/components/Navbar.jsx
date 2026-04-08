@@ -2,13 +2,6 @@ import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useCart } from '../context/CartContext'
 
-function OncfLogo() {
-  return (
-    <img src="/logo.png" alt="ONCF Logo"
-      style={{ width: 48, height: 48, objectFit: 'contain' }} />
-  )
-}
-
 export default function Navbar() {
   const { user, logout } = useAuth()
   const { itemCount }    = useCart()
@@ -28,15 +21,12 @@ export default function Navbar() {
 
         {/* ─── Logo ─── */}
         <Link className="navbar-brand" to="/">
-          <OncfLogo />
-          <div>
-            <span style={{ fontFamily: 'Georgia, serif', letterSpacing: '3px', fontSize: '1.25rem', display: 'block', lineHeight: 1 }}>
-              ONCF
-            </span>
-            <span style={{ fontSize: '0.6rem', letterSpacing: '1px', color: 'rgba(255,255,255,0.5)', fontWeight: 400 }}>
-              RÉSERVATION EN LIGNE
-            </span>
-          </div>
+          <span style={{ fontWeight: 900, fontSize: '1.5rem', letterSpacing: '0.5px' }}>
+            ONCF
+          </span>
+          <span className="voyages" style={{ fontWeight: 300, fontSize: '1.1rem', marginLeft: 2 }}>
+            voyages
+          </span>
         </Link>
 
         <button className="navbar-toggler border-0" type="button"
@@ -49,8 +39,7 @@ export default function Navbar() {
           <ul className="navbar-nav ms-auto align-items-lg-center gap-lg-1">
 
             <li className="nav-item">
-              <Link className="nav-link px-3" to="/"
-                style={{ color: isActive('/') ? '#FF6B35' : undefined, fontWeight: isActive('/') ? 600 : undefined }}>
+              <Link className={`nav-link px-3 ${isActive('/') ? 'active' : ''}`} to="/">
                 🔍 Rechercher
               </Link>
             </li>
@@ -58,15 +47,14 @@ export default function Navbar() {
             {user ? (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link px-3 position-relative" to="/panier"
-                    style={{ color: isActive('/panier') ? '#FF6B35' : undefined, fontWeight: isActive('/panier') ? 600 : undefined }}>
+                  <Link className={`nav-link px-3 position-relative ${isActive('/panier') ? 'active' : ''}`} to="/panier">
                     🛒 Panier
                     {itemCount > 0 && (
                       <span style={{
-                        background: '#FF6B35',
-                        color: 'white',
+                        background: 'white',
+                        color: '#E8192C',
                         fontSize: '0.68rem',
-                        fontWeight: 700,
+                        fontWeight: 800,
                         borderRadius: '50%',
                         width: 18, height: 18,
                         display: 'inline-flex',
@@ -85,21 +73,21 @@ export default function Navbar() {
                   <button
                     className="btn btn-sm dropdown-toggle"
                     style={{
-                      background: 'rgba(255,107,53,0.15)',
-                      border: '1.5px solid rgba(255,107,53,0.4)',
+                      background: 'rgba(255,255,255,0.2)',
+                      border: '1.5px solid rgba(255,255,255,0.35)',
                       color: 'white',
-                      borderRadius: '24px',
+                      borderRadius: '50px',
                       padding: '0.4rem 1.1rem',
                       fontSize: '0.875rem',
-                      fontWeight: 500,
+                      fontWeight: 600,
                     }}
                     data-bs-toggle="dropdown">
                     👤 {user.prenom} {user.nom}
                   </button>
                   <ul className="dropdown-menu dropdown-menu-end shadow border-0"
-                    style={{ borderRadius: '12px', minWidth: '170px', padding: '0.5rem 0' }}>
+                    style={{ borderRadius: '14px', minWidth: '170px', padding: '0.5rem 0' }}>
                     <li>
-                      <div className="px-3 py-2" style={{ fontSize: '0.78rem', color: '#607D8B', borderBottom: '1px solid #F0F0F0' }}>
+                      <div className="px-3 py-2" style={{ fontSize: '0.78rem', color: '#6B7280', borderBottom: '1px solid #F0F0F0' }}>
                         {user.email}
                       </div>
                     </li>
@@ -116,22 +104,19 @@ export default function Navbar() {
             ) : (
               <>
                 <li className="nav-item">
-                  <Link className="nav-link px-3" to="/login"
-                    style={{ color: isActive('/login') ? '#FF6B35' : undefined }}>
+                  <Link className={`nav-link px-3 ${isActive('/login') ? 'active' : ''}`} to="/login">
                     Connexion
                   </Link>
                 </li>
                 <li className="nav-item ms-lg-2">
-                  <Link to="/register"
-                    className="btn btn-sm"
+                  <Link to="/register" className="btn btn-sm"
                     style={{
-                      background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
-                      color: 'white',
-                      borderRadius: '24px',
+                      background: 'white',
+                      color: '#E8192C',
+                      borderRadius: '50px',
                       padding: '0.4rem 1.3rem',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       border: 'none',
-                      boxShadow: '0 2px 8px rgba(255,107,53,0.35)',
                     }}>
                     S'inscrire
                   </Link>

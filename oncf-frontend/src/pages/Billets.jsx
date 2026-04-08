@@ -16,7 +16,7 @@ export default function Billets() {
   if (loading) return (
     <div className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
       <div className="text-center">
-        <div className="spinner-border mb-3" style={{ color: '#FF6B35', width: '3rem', height: '3rem' }} />
+        <div className="spinner-border mb-3" style={{ color: '#E8192C', width: '3rem', height: '3rem' }} />
         <p style={{ color: '#607D8B' }}>Chargement des billets…</p>
       </div>
     </div>
@@ -34,7 +34,7 @@ export default function Billets() {
       {/* En-tête */}
       <div className="d-flex justify-content-between align-items-center mb-4 no-print">
         <div>
-          <h2 style={{ fontFamily: 'Georgia, serif', color: '#0A2342', fontWeight: 700, marginBottom: 2 }}>
+          <h2 style={{ fontFamily: 'Georgia, serif', color: '#1A1A2E', fontWeight: 700, marginBottom: 2 }}>
             🎫 Vos billets
           </h2>
           <span style={{ color: '#607D8B', fontSize: '0.875rem' }}>
@@ -43,18 +43,18 @@ export default function Billets() {
         </div>
         <div className="d-flex gap-2">
           <Link to="/"
-            style={{ background: '#F5F7FA', color: '#0A2342', border: '1.5px solid #E0E7EF',
+            style={{ background: '#F5F7FA', color: '#1A1A2E', border: '1.5px solid #E0E7EF',
               borderRadius: 10, padding: '0.5rem 1.2rem', fontSize: '0.875rem',
               textDecoration: 'none', fontWeight: 600 }}>
             🔍 Nouveau voyage
           </Link>
           <button onClick={() => window.print()}
             style={{
-              background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
+              background: 'linear-gradient(135deg, #E8192C, #C0142A)',
               color: 'white', border: 'none',
               borderRadius: 10, padding: '0.5rem 1.2rem', fontSize: '0.875rem',
               fontWeight: 700, cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(255,107,53,0.35)',
+              boxShadow: '0 2px 8px rgba(232,25,44,0.35)',
             }}>
             🖨️ Imprimer
           </button>
@@ -84,10 +84,10 @@ export default function Billets() {
             <div className="billet-header d-flex justify-content-between align-items-center">
               <div className="d-flex align-items-center gap-3">
                 <div style={{
-                  background: 'rgba(255,107,53,0.2)', borderRadius: 12,
+                  background: 'rgba(232,25,44,0.2)', borderRadius: 12,
                   width: 50, height: 50, display: 'flex', alignItems: 'center',
                   justifyContent: 'center', fontSize: 24,
-                  border: '1.5px solid rgba(255,107,53,0.4)',
+                  border: '1.5px solid rgba(232,25,44,0.4)',
                 }}>
                   🚂
                 </div>
@@ -101,9 +101,9 @@ export default function Billets() {
                 </div>
               </div>
               <div style={{
-                background: 'rgba(255,107,53,0.2)', borderRadius: 8,
+                background: 'rgba(232,25,44,0.2)', borderRadius: 8,
                 padding: '0.35rem 0.9rem', fontSize: '0.85rem', fontWeight: 700,
-                border: '1px solid rgba(255,107,53,0.4)',
+                border: '1px solid rgba(232,25,44,0.4)',
               }}>
                 #{commande.id}-{billetIdx + 1}-{i + 1}
               </div>
@@ -113,41 +113,41 @@ export default function Billets() {
             <div className="row g-0" style={{ background: 'white' }}>
               {/* Voyageur */}
               <div className="col-md-4 p-4" style={{ borderRight: '1px dashed #E0E7EF' }}>
-                <div style={{ fontSize: '0.7rem', color: '#FF6B35', textTransform: 'uppercase',
+                <div style={{ fontSize: '0.7rem', color: '#E8192C', textTransform: 'uppercase',
                   letterSpacing: '1px', marginBottom: 10, fontWeight: 700 }}>
                   Voyageur
                 </div>
-                <div style={{ fontWeight: 700, fontSize: '1.05rem', color: '#0A2342', marginBottom: 4 }}>
+                <div style={{ fontWeight: 700, fontSize: '1.05rem', color: '#1A1A2E', marginBottom: 4 }}>
                   {billet.nom_voyageur}
                 </div>
                 <div style={{ fontSize: '0.8rem', color: '#607D8B', marginBottom: 2 }}>CIN / Passeport</div>
-                <div style={{ fontWeight: 700, color: '#FF6B35', fontSize: '0.9rem' }}>
+                <div style={{ fontWeight: 700, color: '#E8192C', fontSize: '0.9rem' }}>
                   {billet.passport_voyageur}
                 </div>
               </div>
 
               {/* Voyage */}
               <div className="col-md-5 p-4" style={{ borderRight: '1px dashed #E0E7EF' }}>
-                <div style={{ fontSize: '0.7rem', color: '#FF6B35', textTransform: 'uppercase',
+                <div style={{ fontSize: '0.7rem', color: '#E8192C', textTransform: 'uppercase',
                   letterSpacing: '1px', marginBottom: 10, fontWeight: 700 }}>
                   Voyage
                 </div>
                 <div className="d-flex align-items-center gap-2 mb-2">
                   <span className="badge-oncf">{billet.voyage.code_voyage}</span>
                 </div>
-                <div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#0A2342', marginBottom: 10 }}>
+                <div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#1A1A2E', marginBottom: 10 }}>
                   {billet.voyage.villeDepart}
-                  <span style={{ color: '#FF6B35', margin: '0 8px' }}>→</span>
+                  <span style={{ color: '#E8192C', margin: '0 8px' }}>→</span>
                   {billet.voyage.villeDarrivee}
                 </div>
                 <div className="d-flex gap-4">
                   <div>
                     <div style={{ fontSize: '0.7rem', color: '#607D8B', marginBottom: 2 }}>Départ</div>
-                    <div style={{ fontWeight: 700, color: '#0A2342' }}>{billet.voyage.heureDepart}</div>
+                    <div style={{ fontWeight: 700, color: '#1A1A2E' }}>{billet.voyage.heureDepart}</div>
                   </div>
                   <div>
                     <div style={{ fontSize: '0.7rem', color: '#607D8B', marginBottom: 2 }}>Arrivée</div>
-                    <div style={{ fontWeight: 700, color: '#0A2342' }}>{billet.voyage.heureDarrivee}</div>
+                    <div style={{ fontWeight: 700, color: '#1A1A2E' }}>{billet.voyage.heureDarrivee}</div>
                   </div>
                   <div>
                     <div style={{ fontSize: '0.7rem', color: '#607D8B', marginBottom: 2 }}>Prix</div>
@@ -175,7 +175,7 @@ export default function Billets() {
               display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem',
             }}>
               <span style={{ color: '#607D8B' }}>
-                Réservé le : <strong style={{ color: '#0A2342' }}>{commande.date_comm}</strong>
+                Réservé le : <strong style={{ color: '#1A1A2E' }}>{commande.date_comm}</strong>
               </span>
               <span style={{ color: '#2E7D32', fontWeight: 700 }}>
                 ✅ Paiement confirmé

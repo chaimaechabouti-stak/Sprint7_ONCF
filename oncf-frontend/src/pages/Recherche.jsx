@@ -54,186 +54,190 @@ export default function Recherche() {
   }
 
   return (
-    <div className="fade-in">
+    <div className="fade-in" style={{ margin: '-1.5rem -12px 0' }}>
 
-      {/* ─── Hero ─────────────────────────────────────────── */}
-      <div className="search-hero">
-        <div className="row align-items-center" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="col-md-4 mb-3 mb-md-0">
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8 }}>
-              <span style={{ fontSize: '2rem' }}>🚂</span>
-              <div>
-                <h1 style={{ marginBottom: 2 }}>Réservez votre trajet</h1>
-                <p>Rapide, simple et sécurisé</p>
-              </div>
-            </div>
-            <div className="d-flex gap-3 mt-3" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)' }}>
-              <span>🏙️ 5 villes</span>
-              <span>💳 Paiement sécurisé</span>
-            </div>
+      {/* ─── Hero rouge ───────────────────────────────────── */}
+      <div style={{ background: '#E8192C', padding: '2rem 0 0' }}>
+        <div className="container">
+          <h1 style={{ color: 'white', fontWeight: 900, fontSize: '1.9rem', marginBottom: 4 }}>
+            ONCF <span style={{ fontWeight: 300 }}>voyages</span>
+          </h1>
+          <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+            Réservez votre billet de train en ligne
+          </p>
+
+          {/* ─── Tab ─── */}
+          <div>
+            <button className="tab-oncf active">
+              🎫 J'achète mon billet
+            </button>
           </div>
-          <div className="col-md-8">
-            <form onSubmit={handleSearch} className="row g-2 align-items-end">
-              <div className="col-md-4">
-                <label className="form-label text-white mb-1" style={{ fontSize: '0.85rem', fontWeight: 600 }}>
-                  🏁 Ville de départ
-                </label>
-                <select className="form-select"
-                  value={form.ville_depart}
-                  onChange={(e) => setForm((f) => ({ ...f, ville_depart: e.target.value }))}
-                  style={{ borderRadius: 10, border: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
-                  required>
-                  <option value="">-- Choisir --</option>
-                  {villes.depart.map((v) => (
-                    <option key={v} value={v}>{v}</option>
-                  ))}
-                </select>
-              </div>
 
-              <div className="col-md-1 text-center pb-1">
-                <button type="button" onClick={inverser}
-                  style={{
-                    background: 'rgba(255,107,53,0.2)',
-                    color: '#FF6B35',
-                    border: '1.5px solid rgba(255,107,53,0.4)',
-                    borderRadius: '50%',
-                    width: 36, height: 36,
-                    fontSize: '1.1rem',
-                    cursor: 'pointer',
-                    transition: 'all 0.2s',
-                  }}>
-                  ⇄
-                </button>
-              </div>
+          {/* ─── Carte blanche ─── */}
+          <div style={{
+            background: 'white',
+            borderRadius: '0 20px 20px 20px',
+            padding: '2rem',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+            marginBottom: 0,
+          }}>
+            <form onSubmit={handleSearch}>
+              <div className="row g-3 align-items-end">
 
-              <div className="col-md-4">
-                <label className="form-label text-white mb-1" style={{ fontSize: '0.85rem', fontWeight: 600 }}>
-                  🎯 Ville d'arrivée
-                </label>
-                <select className="form-select"
-                  value={form.ville_arrivee}
-                  onChange={(e) => setForm((f) => ({ ...f, ville_arrivee: e.target.value }))}
-                  style={{ borderRadius: 10, border: 'none', boxShadow: '0 2px 8px rgba(0,0,0,0.15)' }}
-                  required>
-                  <option value="">-- Choisir --</option>
-                  {villes.arrivee.map((v) => (
-                    <option key={v} value={v}>{v}</option>
-                  ))}
-                </select>
-              </div>
+                {/* Gare départ */}
+                <div className="col-md-3">
+                  <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#6B7280', marginBottom: 6, display: 'block' }}>
+                    📍 Ma gare de départ
+                  </label>
+                  <select className="form-select input-oncf"
+                    value={form.ville_depart}
+                    onChange={(e) => setForm((f) => ({ ...f, ville_depart: e.target.value }))}
+                    required>
+                    <option value="">Ma gare de départ</option>
+                    {villes.depart.map((v) => (
+                      <option key={v} value={v}>{v}</option>
+                    ))}
+                  </select>
+                </div>
 
-              <div className="col-md-3">
-                <button type="submit" className="btn w-100" disabled={loading}
-                  style={{
-                    background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
-                    color: 'white', fontWeight: 700,
-                    borderRadius: 10, border: 'none',
-                    padding: '0.6rem',
-                    boxShadow: '0 4px 14px rgba(255,107,53,0.4)',
-                  }}>
-                  {loading
-                    ? <span className="spinner-border spinner-border-sm" />
-                    : '🔍 Rechercher'}
-                </button>
+                {/* Inverser */}
+                <div className="col-md-auto text-center" style={{ paddingBottom: 2 }}>
+                  <button type="button" onClick={inverser}
+                    style={{
+                      background: '#FEF2F2',
+                      color: '#E8192C',
+                      border: '1.5px solid #FECACA',
+                      borderRadius: '50%',
+                      width: 40, height: 40,
+                      fontSize: '1.1rem',
+                      cursor: 'pointer',
+                      fontWeight: 700,
+                    }}>
+                    ⇄
+                  </button>
+                </div>
+
+                {/* Gare arrivée */}
+                <div className="col-md-3">
+                  <label style={{ fontSize: '0.8rem', fontWeight: 600, color: '#6B7280', marginBottom: 6, display: 'block' }}>
+                    📍 Ma gare d'arrivée
+                  </label>
+                  <select className="form-select input-oncf"
+                    value={form.ville_arrivee}
+                    onChange={(e) => setForm((f) => ({ ...f, ville_arrivee: e.target.value }))}
+                    required>
+                    <option value="">Ma gare d'arrivée</option>
+                    {villes.arrivee.map((v) => (
+                      <option key={v} value={v}>{v}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Bouton recherche */}
+                <div className="col-md-auto ms-auto">
+                  <button type="submit" className="btn-search" disabled={loading}
+                    title="Rechercher">
+                    {loading
+                      ? <span className="spinner-border spinner-border-sm" style={{ color: 'white' }} />
+                      : '🔍'}
+                  </button>
+                </div>
               </div>
             </form>
           </div>
         </div>
       </div>
 
-      {/* ─── Erreur ───────────────────────────────────────── */}
-      {error && (
-        <div className="alert rounded-3" style={{ background: '#FFEBEE', color: '#C62828', border: '1px solid #FFCDD2' }}>
-          ⚠️ {error}
-        </div>
-      )}
+      {/* ─── Contenu ──────────────────────────────────────── */}
+      <div className="container mt-4">
 
-      {/* ─── Résultats ────────────────────────────────────── */}
-      {searched && !loading && (
-        voyages.length === 0 ? (
-          <div className="text-center py-5 card-oncf" style={{ padding: '3rem' }}>
-            <div style={{ fontSize: '3rem', marginBottom: 16 }}>🚫</div>
-            <h5 style={{ color: '#0A2342', fontFamily: 'Georgia, serif' }}>Aucun voyage disponible</h5>
-            <p style={{ color: '#607D8B', fontSize: '0.9rem' }}>
-              Aucun trajet trouvé pour {form.ville_depart} → {form.ville_arrivee}
-            </p>
+        {error && (
+          <div className="px-3 py-2 rounded-3 mb-3"
+            style={{ background: '#FEF2F2', color: '#DC2626', border: '1px solid #FECACA' }}>
+            ⚠️ {error}
           </div>
-        ) : (
-          <div className="card-oncf fade-in">
-            <div className="px-4 py-3 d-flex justify-content-between align-items-center"
-              style={{ borderBottom: '1px solid #E0E7EF', background: '#FAFBFC' }}>
-              <div>
-                <span style={{ color: '#0A2342', fontWeight: 700, fontSize: '1rem' }}>
-                  {voyages.length} voyage(s) disponible(s)
-                </span>
-                <span className="ms-2" style={{ color: '#607D8B', fontSize: '0.875rem' }}>
-                  {form.ville_depart} → {form.ville_arrivee}
-                </span>
+        )}
+
+        {searched && !loading && (
+          voyages.length === 0 ? (
+            <div className="text-center py-5 card-oncf">
+              <div style={{ fontSize: '3rem', marginBottom: 16 }}>🚫</div>
+              <h5 style={{ color: '#1A1A2E', fontWeight: 700 }}>Aucun voyage disponible</h5>
+              <p style={{ color: '#6B7280', fontSize: '0.9rem' }}>
+                Aucun trajet trouvé pour {form.ville_depart} → {form.ville_arrivee}
+              </p>
+            </div>
+          ) : (
+            <div className="card-oncf fade-in">
+              <div className="px-4 py-3 d-flex justify-content-between align-items-center"
+                style={{ borderBottom: '1px solid #F3F4F6', background: '#FAFAFA' }}>
+                <div>
+                  <span style={{ color: '#1A1A2E', fontWeight: 700 }}>
+                    {voyages.length} voyage(s) disponible(s)
+                  </span>
+                  <span className="ms-2" style={{ color: '#6B7280', fontSize: '0.875rem' }}>
+                    {form.ville_depart} → {form.ville_arrivee}
+                  </span>
+                </div>
+                <span className="badge-oncf">Résultats</span>
               </div>
-              <span style={{ background: '#FFF4EF', color: '#FF6B35', fontSize: '0.8rem',
-                fontWeight: 600, padding: '0.3rem 0.8rem', borderRadius: 20,
-                border: '1px solid #FFD5C2' }}>
-                Résultats en direct
-              </span>
-            </div>
 
-            <div className="table-responsive">
-              <table className="table table-oncf mb-0">
-                <thead>
-                  <tr>
-                    <th>Code</th>
-                    <th>Départ</th>
-                    <th>Arrivée</th>
-                    <th>H. départ</th>
-                    <th>H. arrivée</th>
-                    <th>Prix</th>
-                    <th>Qté</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {voyages.map((v) => (
-                    <tr key={v.id}>
-                      <td><span className="badge-oncf">{v.code_voyage}</span></td>
-                      <td style={{ fontWeight: 600 }}>{v.villeDepart}</td>
-                      <td style={{ fontWeight: 600 }}>{v.villeDarrivee}</td>
-                      <td style={{ color: '#607D8B', fontSize: '0.875rem' }}>{v.heureDepart}</td>
-                      <td style={{ color: '#607D8B', fontSize: '0.875rem' }}>{v.heureDarrivee}</td>
-                      <td><span className="badge-prix">{v.prixVoyage} DH</span></td>
-                      <td style={{ width: 90 }}>
-                        <input type="number" min="1" max="10"
-                          className="form-control form-control-sm text-center"
-                          value={qtes[v.id] || 1}
-                          style={{ borderRadius: 8 }}
-                          onChange={(e) =>
-                            setQtes((q) => ({ ...q, [v.id]: parseInt(e.target.value) }))
-                          }
-                        />
-                      </td>
-                      <td>
-                        <button onClick={() => handleAddToCart(v)}
-                          style={{
-                            background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
-                            color: 'white', border: 'none',
-                            borderRadius: 8, padding: '0.4rem 1rem',
-                            fontSize: '0.85rem', fontWeight: 600,
-                            cursor: 'pointer',
-                            boxShadow: '0 2px 6px rgba(255,107,53,0.3)',
-                            transition: 'all 0.2s',
-                          }}>
-                          + Panier
-                        </button>
-                      </td>
+              <div className="table-responsive">
+                <table className="table table-oncf mb-0">
+                  <thead>
+                    <tr>
+                      <th>Code</th>
+                      <th>Départ</th>
+                      <th>Arrivée</th>
+                      <th>H. départ</th>
+                      <th>H. arrivée</th>
+                      <th>Prix</th>
+                      <th>Qté</th>
+                      <th>Action</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {voyages.map((v) => (
+                      <tr key={v.id}>
+                        <td><span className="badge-oncf">{v.code_voyage}</span></td>
+                        <td style={{ fontWeight: 600 }}>{v.villeDepart}</td>
+                        <td style={{ fontWeight: 600 }}>{v.villeDarrivee}</td>
+                        <td style={{ color: '#6B7280' }}>{v.heureDepart}</td>
+                        <td style={{ color: '#6B7280' }}>{v.heureDarrivee}</td>
+                        <td><span className="badge-prix">{v.prixVoyage} DH</span></td>
+                        <td style={{ width: 90 }}>
+                          <input type="number" min="1" max="10"
+                            className="form-control form-control-sm text-center"
+                            value={qtes[v.id] || 1}
+                            style={{ borderRadius: 50, borderColor: '#E5E7EB' }}
+                            onChange={(e) =>
+                              setQtes((q) => ({ ...q, [v.id]: parseInt(e.target.value) }))
+                            }
+                          />
+                        </td>
+                        <td>
+                          <button onClick={() => handleAddToCart(v)}
+                            style={{
+                              background: '#E8192C',
+                              color: 'white', border: 'none',
+                              borderRadius: 50, padding: '0.4rem 1rem',
+                              fontSize: '0.85rem', fontWeight: 700,
+                              cursor: 'pointer',
+                              boxShadow: '0 2px 8px rgba(232,25,44,0.3)',
+                            }}>
+                            + Panier
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-        )
-      )}
+          )
+        )}
+      </div>
 
-      {/* ─── Toast ────────────────────────────────────────── */}
       {toast && <div className="toast-oncf">{toast}</div>}
     </div>
   )
