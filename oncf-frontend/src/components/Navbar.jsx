@@ -4,10 +4,8 @@ import { useCart } from '../context/CartContext'
 
 function OncfLogo() {
   return (
-    <div style={{ width: 50, height: 42, overflow: 'hidden', borderRadius: 6 }}>
-      <img src="/logo.png" alt="ONCF Logo"
-        style={{ width: 160, height: 130, objectFit: 'cover', objectPosition: '55% 50%', marginLeft: -30, marginTop: -20 }} />
-    </div>
+    <img src="/logo.png" alt="ONCF Logo"
+      style={{ width: 48, height: 48, objectFit: 'contain' }} />
   )
 }
 

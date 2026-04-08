@@ -37,7 +37,7 @@ export default function Login() {
         {/* Logo + titre */}
         <div className="text-center mb-4">
           <img src="/logo.png" alt="ONCF Logo"
-            style={{ width: 80, height: 80, objectFit: 'contain', margin: '0 auto 14px', display: 'block' }} />
+            style={{ width: 100, height: 100, objectFit: 'contain', margin: '0 auto 14px', display: 'block' }} />
           <h2 style={{ fontFamily: 'Georgia, serif', color: '#0A2342', fontWeight: 700, fontSize: '1.7rem', marginBottom: 4 }}>
             ONCF
           </h2>
