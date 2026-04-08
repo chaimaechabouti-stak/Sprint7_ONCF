@@ -31,26 +31,25 @@ export default function Register() {
   const fieldError = (name) =>
     errors[name] ? (
       <div style={{ color: '#C62828', fontSize: '0.8rem', marginTop: 4 }}>
-        {errors[name][0]}
+        ⚠️ {errors[name][0]}
       </div>
     ) : null
 
   const inputStyle = {
-    borderRadius: 8, borderColor: '#D0DCE8',
-    fontSize: '0.9rem', padding: '0.55rem 0.75rem',
+    borderRadius: 10, borderColor: '#E0E7EF',
+    fontSize: '0.9rem', padding: '0.6rem 0.85rem',
   }
-
   const labelStyle = {
-    fontWeight: 500, fontSize: '0.875rem', color: '#1B3A5C', marginBottom: 4,
+    fontWeight: 600, fontSize: '0.85rem', color: '#0A2342', marginBottom: 4,
   }
 
   return (
-    <div className="row justify-content-center mt-4 mb-5">
+    <div className="row justify-content-center mt-4 mb-5 fade-in">
       <div className="col-md-7 col-lg-6">
 
         {/* En-tête */}
         <div className="text-center mb-4">
-          <h2 style={{ fontFamily: 'Georgia, serif', color: '#1B3A5C', fontWeight: 700 }}>
+          <h2 style={{ fontFamily: 'Georgia, serif', color: '#0A2342', fontWeight: 700, fontSize: '1.7rem' }}>
             Créer un compte
           </h2>
           <p style={{ color: '#607D8B', fontSize: '0.875rem' }}>
@@ -60,18 +59,18 @@ export default function Register() {
 
         <div className="card-oncf p-4">
           {errors.general && (
-            <div className="alert rounded-3 mb-3"
+            <div className="mb-3 px-3 py-2 rounded-3"
               style={{ background: '#FFEBEE', color: '#C62828', border: '1px solid #FFCDD2', fontSize: '0.875rem' }}>
-              {errors.general[0]}
+              ⚠️ {errors.general[0]}
             </div>
           )}
 
           <form onSubmit={handleSubmit}>
 
-            {/* Section identité */}
-            <div className="mb-3 pb-3" style={{ borderBottom: '1px solid #EEF2F6' }}>
-              <p style={{ fontSize: '0.8rem', color: '#607D8B', fontWeight: 600,
-                textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 12 }}>
+            {/* Identité */}
+            <div className="mb-3 pb-3" style={{ borderBottom: '1px solid #F0F4F8' }}>
+              <p style={{ fontSize: '0.75rem', color: '#FF6B35', fontWeight: 700,
+                textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 12 }}>
                 Identité
               </p>
               <div className="row g-3">
@@ -92,10 +91,10 @@ export default function Register() {
               </div>
             </div>
 
-            {/* Section compte */}
-            <div className="mb-3 pb-3" style={{ borderBottom: '1px solid #EEF2F6' }}>
-              <p style={{ fontSize: '0.8rem', color: '#607D8B', fontWeight: 600,
-                textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: 12 }}>
+            {/* Compte */}
+            <div className="mb-4 pb-3" style={{ borderBottom: '1px solid #F0F4F8' }}>
+              <p style={{ fontSize: '0.75rem', color: '#FF6B35', fontWeight: 700,
+                textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 12 }}>
                 Compte
               </p>
               <div className="row g-3">
@@ -133,20 +132,21 @@ export default function Register() {
             <button type="submit" disabled={loading}
               className="w-100 btn"
               style={{
-                background: '#1B3A5C', color: 'white',
-                borderRadius: 8, border: 'none',
-                padding: '0.65rem', fontWeight: 600, fontSize: '0.95rem',
+                background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
+                color: 'white', borderRadius: 10, border: 'none',
+                padding: '0.7rem', fontWeight: 700, fontSize: '0.95rem',
+                boxShadow: '0 4px 14px rgba(255,107,53,0.35)',
               }}>
               {loading
                 ? <><span className="spinner-border spinner-border-sm me-2" />Création…</>
-                : 'Créer mon compte'}
+                : 'Créer mon compte →'}
             </button>
           </form>
 
-          <div className="text-center mt-3 pt-3" style={{ borderTop: '1px solid #E8EDF2' }}>
+          <div className="text-center mt-3 pt-3" style={{ borderTop: '1px solid #F0F4F8' }}>
             <span style={{ color: '#607D8B', fontSize: '0.875rem' }}>Déjà inscrit ? </span>
             <Link to="/login"
-              style={{ color: '#2E6DA4', fontWeight: 600, fontSize: '0.875rem', textDecoration: 'none' }}>
+              style={{ color: '#FF6B35', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none' }}>
               Se connecter →
             </Link>
           </div>

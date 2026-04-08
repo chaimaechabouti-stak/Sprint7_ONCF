@@ -31,32 +31,32 @@ export default function Login() {
   }
 
   return (
-    <div className="row justify-content-center mt-4">
+    <div className="row justify-content-center mt-5 fade-in">
       <div className="col-md-5 col-lg-4">
 
-        {/* Logo centré */}
+        {/* Logo + titre */}
         <div className="text-center mb-4">
           <div style={{
-            width: 64, height: 64, borderRadius: 16,
-            background: '#1B3A5C',
+            width: 72, height: 72, borderRadius: 20,
+            background: 'linear-gradient(135deg, #0A2342, #163A6B)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            margin: '0 auto 12px',
+            margin: '0 auto 14px',
+            boxShadow: '0 8px 24px rgba(10,35,66,0.25)',
           }}>
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-              <rect x="7" y="10" width="15" height="10" rx="3" fill="white"/>
-              <rect x="9" y="12" width="4" height="4" rx="1" fill="#1B3A5C"/>
-              <rect x="15" y="12" width="4" height="4" rx="1" fill="#1B3A5C"/>
-              <rect x="5" y="13" width="2" height="2" rx="1" fill="white" opacity="0.5"/>
-              <circle cx="10" cy="23" r="2.5" fill="white" stroke="#1B3A5C" strokeWidth="1"/>
-              <circle cx="18" cy="23" r="2.5" fill="white" stroke="#1B3A5C" strokeWidth="1"/>
-              <rect x="22" y="18" width="9" height="6" rx="2" fill="white" opacity="0.9"/>
-              <circle cx="26" cy="23" r="2" fill="white" stroke="#1B3A5C" strokeWidth="1"/>
+            <svg width="40" height="40" viewBox="0 0 38 38" fill="none">
+              <rect x="7" y="10" width="16" height="11" rx="3" fill="white"/>
+              <rect x="9" y="12" width="4" height="4" rx="1" fill="#0A2342"/>
+              <rect x="15" y="12" width="4" height="4" rx="1" fill="#0A2342"/>
+              <circle cx="11" cy="24" r="2.5" fill="white" stroke="#0A2342" strokeWidth="1"/>
+              <circle cx="19" cy="24" r="2.5" fill="white" stroke="#0A2342" strokeWidth="1"/>
+              <rect x="23" y="18" width="10" height="7" rx="2" fill="white" opacity="0.85"/>
+              <circle cx="27" cy="24" r="2" fill="white" stroke="#0A2342" strokeWidth="1"/>
             </svg>
           </div>
-          <h2 style={{ fontFamily: 'Georgia, serif', color: '#1B3A5C', fontWeight: 700, fontSize: '1.6rem' }}>
+          <h2 style={{ fontFamily: 'Georgia, serif', color: '#0A2342', fontWeight: 700, fontSize: '1.7rem', marginBottom: 4 }}>
             ONCF
           </h2>
-          <p style={{ color: '#607D8B', fontSize: '0.875rem' }}>
+          <p style={{ color: '#607D8B', fontSize: '0.875rem', margin: 0 }}>
             Connectez-vous à votre espace
           </p>
         </div>
@@ -64,57 +64,58 @@ export default function Login() {
         {/* Card */}
         <div className="card-oncf p-4">
           {error && (
-            <div className="alert rounded-3 mb-3"
+            <div className="mb-3 px-3 py-2 rounded-3"
               style={{ background: '#FFEBEE', color: '#C62828', border: '1px solid #FFCDD2', fontSize: '0.875rem' }}>
-              {error}
+              ⚠️ {error}
             </div>
           )}
 
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label className="form-label"
-                style={{ fontWeight: 500, fontSize: '0.875rem', color: '#1B3A5C' }}>
+                style={{ fontWeight: 600, fontSize: '0.85rem', color: '#0A2342' }}>
                 Login
               </label>
               <input className="form-control" name="login"
                 value={form.login} onChange={handleChange}
                 placeholder="votre_login"
                 required autoFocus
-                style={{ borderRadius: 8, borderColor: '#D0DCE8', fontSize: '0.9rem' }} />
+                style={{ borderRadius: 10, borderColor: '#E0E7EF', fontSize: '0.9rem', padding: '0.6rem 0.85rem' }} />
             </div>
 
             <div className="mb-4">
               <label className="form-label"
-                style={{ fontWeight: 500, fontSize: '0.875rem', color: '#1B3A5C' }}>
+                style={{ fontWeight: 600, fontSize: '0.85rem', color: '#0A2342' }}>
                 Mot de passe
               </label>
               <input className="form-control" type="password" name="password"
                 value={form.password} onChange={handleChange}
                 placeholder="••••••••"
                 required
-                style={{ borderRadius: 8, borderColor: '#D0DCE8', fontSize: '0.9rem' }} />
+                style={{ borderRadius: 10, borderColor: '#E0E7EF', fontSize: '0.9rem', padding: '0.6rem 0.85rem' }} />
             </div>
 
             <button type="submit" disabled={loading}
               className="w-100 btn"
               style={{
-                background: '#1B3A5C', color: 'white',
-                borderRadius: 8, border: 'none',
-                padding: '0.65rem', fontWeight: 600,
-                fontSize: '0.95rem', letterSpacing: '0.3px',
+                background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
+                color: 'white',
+                borderRadius: 10, border: 'none',
+                padding: '0.7rem', fontWeight: 700,
+                fontSize: '0.95rem',
+                boxShadow: '0 4px 14px rgba(255,107,53,0.35)',
+                transition: 'all 0.2s',
               }}>
               {loading
                 ? <><span className="spinner-border spinner-border-sm me-2" />Connexion…</>
-                : 'Se connecter'}
+                : 'Se connecter →'}
             </button>
           </form>
 
-          <div className="text-center mt-3 pt-3" style={{ borderTop: '1px solid #E8EDF2' }}>
-            <span style={{ color: '#607D8B', fontSize: '0.875rem' }}>
-              Pas de compte ?{' '}
-            </span>
+          <div className="text-center mt-3 pt-3" style={{ borderTop: '1px solid #F0F4F8' }}>
+            <span style={{ color: '#607D8B', fontSize: '0.875rem' }}>Pas de compte ? </span>
             <Link to="/register"
-              style={{ color: '#2E6DA4', fontWeight: 600, fontSize: '0.875rem', textDecoration: 'none' }}>
+              style={{ color: '#FF6B35', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none' }}>
               Créer un compte →
             </Link>
           </div>
@@ -122,9 +123,11 @@ export default function Login() {
 
         {/* Info test */}
         <div className="text-center mt-3"
-          style={{ background: '#E8F4FD', borderRadius: 8, padding: '0.75rem 1rem', fontSize: '0.8rem', color: '#2E6DA4' }}>
-          Compte test : <strong>client1</strong> / <strong>123456</strong>
+          style={{ background: '#FFF4EF', borderRadius: 10, padding: '0.75rem 1rem',
+            fontSize: '0.8rem', color: '#FF6B35', border: '1px solid #FFD5C2' }}>
+          🧪 Compte test : <strong>client1</strong> / <strong>123456</strong>
         </div>
+
       </div>
     </div>
   )
