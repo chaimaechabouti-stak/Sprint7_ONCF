@@ -69,7 +69,7 @@ export default function Register() {
 
             {/* Identité */}
             <div className="mb-3 pb-3" style={{ borderBottom: '1px solid #F0F4F8' }}>
-              <p style={{ fontSize: '0.75rem', color: '#E8192C', fontWeight: 700,
+              <p style={{ fontSize: '0.75rem', color: '#FF6B35', fontWeight: 700,
                 textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 12 }}>
                 Identité
               </p>
@@ -93,7 +93,7 @@ export default function Register() {
 
             {/* Compte */}
             <div className="mb-4 pb-3" style={{ borderBottom: '1px solid #F0F4F8' }}>
-              <p style={{ fontSize: '0.75rem', color: '#E8192C', fontWeight: 700,
+              <p style={{ fontSize: '0.75rem', color: '#FF6B35', fontWeight: 700,
                 textTransform: 'uppercase', letterSpacing: '1px', marginBottom: 12 }}>
                 Compte
               </p>
@@ -132,7 +132,7 @@ export default function Register() {
             <button type="submit" disabled={loading}
               className="w-100 btn"
               style={{
-                background: 'linear-gradient(135deg, #E8192C, #C0142A)',
+                background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
                 color: 'white', borderRadius: 10, border: 'none',
                 padding: '0.7rem', fontWeight: 700, fontSize: '0.95rem',
                 boxShadow: '0 4px 14px rgba(232,25,44,0.35)',
@@ -146,7 +146,7 @@ export default function Register() {
           <div className="text-center mt-3 pt-3" style={{ borderTop: '1px solid #F0F4F8' }}>
             <span style={{ color: '#607D8B', fontSize: '0.875rem' }}>Déjà inscrit ? </span>
             <Link to="/login"
-              style={{ color: '#E8192C', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none' }}>
+              style={{ color: '#FF6B35', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none' }}>
               Se connecter →
             </Link>
           </div>

@@ -88,14 +88,14 @@ function CheckoutForm({ clientSecret, total, onSuccess }) {
       )}
 
       <div className="mb-3 px-3 py-2 rounded-3"
-        style={{ background: '#FFF4EF', border: '1px solid #FFD5C2', fontSize: '0.825rem', color: '#E8192C' }}>
+        style={{ background: '#FFF4EF', border: '1px solid #FFD5C2', fontSize: '0.825rem', color: '#FF6B35' }}>
         🧪 <strong>Test :</strong> Carte <code>4242 4242 4242 4242</code>, date <code>12/28</code>, CVV <code>123</code>
       </div>
 
       <button type="submit" className="btn w-100"
         disabled={!stripe || loading}
         style={{
-          background: 'linear-gradient(135deg, #E8192C, #C0142A)',
+          background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
           color: 'white', border: 'none',
           borderRadius: 10, padding: '0.75rem',
           fontWeight: 700, fontSize: '1rem',
@@ -147,7 +147,7 @@ export default function Paiement() {
   if (creatingIntent || !clientSecret) return (
     <div className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
       <div className="text-center">
-        <div className="spinner-border mb-3" style={{ color: '#E8192C', width: '3rem', height: '3rem' }} />
+        <div className="spinner-border mb-3" style={{ color: '#FF6B35', width: '3rem', height: '3rem' }} />
         <p style={{ color: '#607D8B' }}>Initialisation du paiement…</p>
       </div>
     </div>
@@ -186,9 +186,9 @@ export default function Paiement() {
                 ))}
               </tbody>
               <tfoot>
-                <tr style={{ background: '#FFF4EF', borderTop: '2px solid #E8192C' }}>
+                <tr style={{ background: '#FFF4EF', borderTop: '2px solid #FF6B35' }}>
                   <td colSpan="2" className="ps-3 py-3" style={{ fontWeight: 700, color: '#1A1A2E' }}>Total</td>
-                  <td className="text-end pe-3 py-3" style={{ fontWeight: 800, color: '#E8192C', fontSize: '1.2rem' }}>
+                  <td className="text-end pe-3 py-3" style={{ fontWeight: 800, color: '#FF6B35', fontSize: '1.2rem' }}>
                     {total.toFixed(2)} DH
                   </td>
                 </tr>

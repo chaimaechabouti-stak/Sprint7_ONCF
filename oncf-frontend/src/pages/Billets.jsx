@@ -16,7 +16,7 @@ export default function Billets() {
   if (loading) return (
     <div className="d-flex justify-content-center align-items-center" style={{ height: '60vh' }}>
       <div className="text-center">
-        <div className="spinner-border mb-3" style={{ color: '#E8192C', width: '3rem', height: '3rem' }} />
+        <div className="spinner-border mb-3" style={{ color: '#FF6B35', width: '3rem', height: '3rem' }} />
         <p style={{ color: '#607D8B' }}>Chargement des billets…</p>
       </div>
     </div>
@@ -50,7 +50,7 @@ export default function Billets() {
           </Link>
           <button onClick={() => window.print()}
             style={{
-              background: 'linear-gradient(135deg, #E8192C, #C0142A)',
+              background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
               color: 'white', border: 'none',
               borderRadius: 10, padding: '0.5rem 1.2rem', fontSize: '0.875rem',
               fontWeight: 700, cursor: 'pointer',
@@ -113,7 +113,7 @@ export default function Billets() {
             <div className="row g-0" style={{ background: 'white' }}>
               {/* Voyageur */}
               <div className="col-md-4 p-4" style={{ borderRight: '1px dashed #E0E7EF' }}>
-                <div style={{ fontSize: '0.7rem', color: '#E8192C', textTransform: 'uppercase',
+                <div style={{ fontSize: '0.7rem', color: '#FF6B35', textTransform: 'uppercase',
                   letterSpacing: '1px', marginBottom: 10, fontWeight: 700 }}>
                   Voyageur
                 </div>
@@ -121,14 +121,14 @@ export default function Billets() {
                   {billet.nom_voyageur}
                 </div>
                 <div style={{ fontSize: '0.8rem', color: '#607D8B', marginBottom: 2 }}>CIN / Passeport</div>
-                <div style={{ fontWeight: 700, color: '#E8192C', fontSize: '0.9rem' }}>
+                <div style={{ fontWeight: 700, color: '#FF6B35', fontSize: '0.9rem' }}>
                   {billet.passport_voyageur}
                 </div>
               </div>
 
               {/* Voyage */}
               <div className="col-md-5 p-4" style={{ borderRight: '1px dashed #E0E7EF' }}>
-                <div style={{ fontSize: '0.7rem', color: '#E8192C', textTransform: 'uppercase',
+                <div style={{ fontSize: '0.7rem', color: '#FF6B35', textTransform: 'uppercase',
                   letterSpacing: '1px', marginBottom: 10, fontWeight: 700 }}>
                   Voyage
                 </div>
@@ -137,7 +137,7 @@ export default function Billets() {
                 </div>
                 <div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#1A1A2E', marginBottom: 10 }}>
                   {billet.voyage.villeDepart}
-                  <span style={{ color: '#E8192C', margin: '0 8px' }}>→</span>
+                  <span style={{ color: '#FF6B35', margin: '0 8px' }}>→</span>
                   {billet.voyage.villeDarrivee}
                 </div>
                 <div className="d-flex gap-4">

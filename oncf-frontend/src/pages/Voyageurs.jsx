@@ -59,7 +59,7 @@ export default function Voyageurs() {
           <div key={step} className="d-flex align-items-center gap-2">
             <div style={{
               width: 28, height: 28, borderRadius: '50%',
-              background: i === 2 ? '#E8192C' : i < 2 ? '#2E7D32' : '#E0E7EF',
+              background: i === 2 ? '#FF6B35' : i < 2 ? '#2E7D32' : '#E0E7EF',
               color: i <= 2 ? 'white' : '#999',
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               fontSize: '0.75rem', fontWeight: 700,
@@ -68,7 +68,7 @@ export default function Voyageurs() {
               {i < 2 ? '✓' : i + 1}
             </div>
             <span style={{
-              color: i === 2 ? '#E8192C' : i < 2 ? '#2E7D32' : '#999',
+              color: i === 2 ? '#FF6B35' : i < 2 ? '#2E7D32' : '#999',
               fontWeight: i === 2 ? 700 : 400,
             }}>
               {step}
@@ -86,7 +86,7 @@ export default function Voyageurs() {
                 <div style={{
                   padding: '0.75rem 1.25rem',
                   background: 'linear-gradient(135deg, #1A1A2E, #2D2D2D)',
-                  borderBottom: '3px solid #E8192C',
+                  borderBottom: '3px solid #FF6B35',
                   display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                 }}>
                   <span style={{ fontWeight: 700, color: 'white', fontSize: '0.9rem' }}>
@@ -119,7 +119,7 @@ export default function Voyageurs() {
           {/* Résumé latéral */}
           <div className="col-lg-4">
             <div className="card-oncf p-4" style={{ position: 'sticky', top: 20 }}>
-              <h6 style={{ color: '#E8192C', textTransform: 'uppercase',
+              <h6 style={{ color: '#FF6B35', textTransform: 'uppercase',
                 fontSize: '0.75rem', letterSpacing: '1px', fontWeight: 700, marginBottom: 16 }}>
                 Résumé commande
               </h6>
@@ -130,17 +130,17 @@ export default function Voyageurs() {
                   <span style={{ color: '#1A1A2E', fontWeight: 600 }}>{(voyage.prixVoyage * qte).toFixed(2)} DH</span>
                 </div>
               ))}
-              <div style={{ borderTop: '2px solid #E8192C', marginTop: 12, paddingTop: 12 }}
+              <div style={{ borderTop: '2px solid #FF6B35', marginTop: 12, paddingTop: 12 }}
                 className="d-flex justify-content-between align-items-center">
                 <span style={{ fontWeight: 700, color: '#1A1A2E' }}>Total</span>
-                <span style={{ fontWeight: 800, color: '#E8192C', fontSize: '1.3rem' }}>
+                <span style={{ fontWeight: 800, color: '#FF6B35', fontSize: '1.3rem' }}>
                   {total.toFixed(2)} DH
                 </span>
               </div>
 
               <button type="submit" className="w-100 btn mt-4"
                 style={{
-                  background: 'linear-gradient(135deg, #E8192C, #C0142A)',
+                  background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
                   color: 'white', borderRadius: 10, border: 'none',
                   padding: '0.7rem', fontWeight: 700,
                   boxShadow: '0 4px 14px rgba(232,25,44,0.35)',

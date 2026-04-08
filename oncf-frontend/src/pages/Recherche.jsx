@@ -56,18 +56,18 @@ export default function Recherche() {
   return (
     <div className="fade-in" style={{ margin: '-1.5rem -12px 0' }}>
 
-      {/* ─── Hero rouge ───────────────────────────────────── */}
-      <div style={{ background: '#E8192C', padding: '2rem 0 0' }}>
-        <div className="container">
-          <h1 style={{ color: 'white', fontWeight: 900, fontSize: '1.9rem', marginBottom: 4 }}>
+      {/* ─── Hero orange ──────────────────────────────────── */}
+      <div style={{ background: '#FF6B35', padding: '2.5rem 0 0' }}>
+        <div className="container d-flex flex-column align-items-center text-center">
+          <h1 style={{ color: 'white', fontWeight: 900, fontSize: '2rem', marginBottom: 4 }}>
             ONCF <span style={{ fontWeight: 300 }}>voyages</span>
           </h1>
-          <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+          <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
             Réservez votre billet de train en ligne
           </p>
 
           {/* ─── Tab ─── */}
-          <div>
+          <div style={{ width: '100%', maxWidth: 800 }}>
             <button className="tab-oncf active">
               🎫 J'achète mon billet
             </button>
@@ -80,9 +80,11 @@ export default function Recherche() {
             padding: '2rem',
             boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
             marginBottom: 0,
+            width: '100%',
+            maxWidth: 800,
           }}>
             <form onSubmit={handleSearch}>
-              <div className="row g-3 align-items-end">
+              <div className="row g-3 align-items-end justify-content-center">
 
                 {/* Gare départ */}
                 <div className="col-md-3">
@@ -105,7 +107,7 @@ export default function Recherche() {
                   <button type="button" onClick={inverser}
                     style={{
                       background: '#FEF2F2',
-                      color: '#E8192C',
+                      color: '#FF6B35',
                       border: '1.5px solid #FECACA',
                       borderRadius: '50%',
                       width: 40, height: 40,
@@ -218,7 +220,7 @@ export default function Recherche() {
                         <td>
                           <button onClick={() => handleAddToCart(v)}
                             style={{
-                              background: '#E8192C',
+                              background: '#FF6B35',
                               color: 'white', border: 'none',
                               borderRadius: 50, padding: '0.4rem 1rem',
                               fontSize: '0.85rem', fontWeight: 700,

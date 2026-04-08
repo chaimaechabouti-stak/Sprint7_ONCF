@@ -83,7 +83,7 @@ export default function Login() {
             <button type="submit" disabled={loading}
               className="w-100 btn"
               style={{
-                background: 'linear-gradient(135deg, #E8192C, #C0142A)',
+                background: 'linear-gradient(135deg, #FF6B35, #E85A25)',
                 color: 'white',
                 borderRadius: 10, border: 'none',
                 padding: '0.7rem', fontWeight: 700,
@@ -100,7 +100,7 @@ export default function Login() {
           <div className="text-center mt-3 pt-3" style={{ borderTop: '1px solid #F0F4F8' }}>
             <span style={{ color: '#607D8B', fontSize: '0.875rem' }}>Pas de compte ? </span>
             <Link to="/register"
-              style={{ color: '#E8192C', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none' }}>
+              style={{ color: '#FF6B35', fontWeight: 700, fontSize: '0.875rem', textDecoration: 'none' }}>
               Créer un compte →
             </Link>
           </div>
@@ -109,7 +109,7 @@ export default function Login() {
         {/* Info test */}
         <div className="text-center mt-3"
           style={{ background: '#FFF4EF', borderRadius: 10, padding: '0.75rem 1rem',
-            fontSize: '0.8rem', color: '#E8192C', border: '1px solid #FFD5C2' }}>
+            fontSize: '0.8rem', color: '#FF6B35', border: '1px solid #FFD5C2' }}>
           🧪 Compte test : <strong>client1</strong> / <strong>123456</strong>
         </div>
 

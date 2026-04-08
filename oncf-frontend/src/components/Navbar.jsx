@@ -52,7 +52,7 @@ export default function Navbar() {
                     {itemCount > 0 && (
                       <span style={{
                         background: 'white',
-                        color: '#E8192C',
+                        color: '#FF6B35',
                         fontSize: '0.68rem',
                         fontWeight: 800,
                         borderRadius: '50%',
@@ -112,7 +112,7 @@ export default function Navbar() {
                   <Link to="/register" className="btn btn-sm"
                     style={{
                       background: 'white',
-                      color: '#E8192C',
+                      color: '#FF6B35',
                       borderRadius: '50px',
                       padding: '0.4rem 1.3rem',
                       fontWeight: 700,
