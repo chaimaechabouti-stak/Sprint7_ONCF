@@ -56,8 +56,8 @@ export default function Recherche() {
   return (
     <div className="fade-in" style={{ margin: '-1.5rem -12px 0' }}>
 
-      {/* ─── Hero orange ──────────────────────────────────── */}
-      <div style={{ background: '#FF6B35', padding: '2.5rem 0 0' }}>
+      {/* ─── Hero transparent ────────────────────────────── */}
+      <div style={{ background: 'rgba(255,107,53,0.82)', padding: '2.5rem 0 0', backdropFilter: 'blur(4px)' }}>
         <div className="container d-flex flex-column align-items-center text-center">
           <h1 style={{ color: 'white', fontWeight: 900, fontSize: '2rem', marginBottom: 4 }}>
             ONCF <span style={{ fontWeight: 300 }}>voyages</span>

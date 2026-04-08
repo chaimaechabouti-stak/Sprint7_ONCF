@@ -1,3 +1,6 @@
+/* ─── Google Fonts ───────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Raleway:ital,wght@0,400;0,700;0,900;1,900&display=swap');
+
 /* ─── Variables ONCF ──────────────────────────────────────── */
 :root {
   --primary:      #FF6B35;
@@ -21,18 +24,27 @@
 
 body {
   background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1600&q=80');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   font-family: 'Segoe UI', Arial, sans-serif;
   color: var(--text);
   font-size: 15px;
   line-height: 1.6;
+  min-height: 100vh;
 }
 
 /* ─── Navbar ─────────────────────────────────────────────── */
 .navbar-oncf {
-  background: var(--primary) !important;
+  background: rgba(20, 20, 30, 0.75) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   padding: 0.6rem 0;
-  box-shadow: 0 2px 12px rgba(232,25,44,0.3);
-  border-bottom: none !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+  border-bottom: 2px solid rgba(255,107,53,0.5) !important;
 }
 
 .navbar-oncf .navbar-brand {
@@ -146,11 +158,16 @@ body {
 
 /* ─── Cards ──────────────────────────────────────────────── */
 .card-oncf {
-  background: white;
+  background: rgba(255,255,255,0.97);
   border: 1px solid var(--border);
   border-radius: var(--card-radius);
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   overflow: hidden;
+}
+
+/* ─── Container pages ────────────────────────────────────── */
+main.container {
+  background: rgba(255,255,255,0.0);
 }
 
 /* ─── Tables ─────────────────────────────────────────────── */

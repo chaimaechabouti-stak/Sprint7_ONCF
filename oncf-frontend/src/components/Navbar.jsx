@@ -19,14 +19,39 @@ export default function Navbar() {
     <nav className="navbar navbar-expand-lg navbar-oncf">
       <div className="container">
 
-        {/* ─── Logo ─── */}
-        <Link className="navbar-brand" to="/">
-          <span style={{ fontWeight: 900, fontSize: '1.5rem', letterSpacing: '0.5px' }}>
-            ONCF
-          </span>
-          <span className="voyages" style={{ fontWeight: 300, fontSize: '1.1rem', marginLeft: 2 }}>
-            voyages
-          </span>
+        {/* ─── Logo typographique ─── */}
+        <Link className="navbar-brand" to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 6 }}>
+              <span style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 900,
+                fontStyle: 'italic',
+                fontSize: '1.8rem',
+                color: 'white',
+                letterSpacing: '2px',
+                textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+              }}>
+                ONCF
+              </span>
+              <span style={{
+                fontFamily: "'Montserrat', sans-serif",
+                fontWeight: 400,
+                fontSize: '1rem',
+                color: 'rgba(255,255,255,0.85)',
+                letterSpacing: '3px',
+                textTransform: 'uppercase',
+              }}>
+                voyages
+              </span>
+            </div>
+            <div style={{
+              height: 3,
+              background: 'linear-gradient(90deg, #FF6B35, rgba(255,107,53,0))',
+              borderRadius: 2,
+              marginTop: 2,
+            }} />
+          </div>
         </Link>
 
         <button className="navbar-toggler border-0" type="button"
