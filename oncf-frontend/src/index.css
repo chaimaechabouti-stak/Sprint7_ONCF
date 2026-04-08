@@ -25,8 +25,8 @@
 body {
   background-color: var(--bg);
   background-image:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=1600&q=80');
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('/OIP (2).jfif');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;

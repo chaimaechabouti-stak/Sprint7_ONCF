@@ -57,7 +57,7 @@ export default function Recherche() {
     <div className="fade-in" style={{ margin: '-1.5rem -12px 0' }}>
 
       {/* ─── Hero transparent ────────────────────────────── */}
-      <div style={{ background: 'rgba(255,107,53,0.82)', padding: '2.5rem 0 0', backdropFilter: 'blur(4px)' }}>
+      <div style={{ background: 'transparent', padding: '2.5rem 0 0' }}>
         <div className="container d-flex flex-column align-items-center text-center">
           <h1 style={{ color: 'white', fontWeight: 900, fontSize: '2rem', marginBottom: 4 }}>
             ONCF <span style={{ fontWeight: 300 }}>voyages</span>
@@ -75,10 +75,10 @@ export default function Recherche() {
 
           {/* ─── Carte blanche ─── */}
           <div style={{
-            background: 'white',
+            background: 'rgba(255,255,255,0.97)',
             borderRadius: '0 20px 20px 20px',
             padding: '2rem',
-            boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
+            boxShadow: '0 8px 40px rgba(0,0,0,0.3)',
             marginBottom: 0,
             width: '100%',
             maxWidth: 800,
